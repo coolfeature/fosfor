@@ -1,0 +1,16 @@
+# Run this on a linux host
+
+# Install Tsung
+
+1) Install Erlang
+
+2) sudo yum -y install erlang perl perl-RRD-Simple.noarch perl-Log-Log4perl-RRDs.noarch gnuplot perl-Template-Toolkit
+
+3) wget http://tsung.erlang-projects.org/dist/tsung-1.6.0.tar.gz
+	tar xfz tsung-1.6.0.tar.gz
+	cd tsung-1.6.0/
+	./configure
+	make
+	sudo -s make install
+
+4) Make sure 8091 is not blocked

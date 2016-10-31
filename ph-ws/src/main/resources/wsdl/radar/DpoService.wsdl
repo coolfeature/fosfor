@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="DpoService" 
+	targetNamespace="http://towerswatson.com/rto/dpo/services/2010/01" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" 
+	xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" 
+	xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" 
+	xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" 
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" 
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+	xmlns:tns="http://towerswatson.com/rto/dpo/services/2010/01" 
+	xmlns:wsa10="http://www.w3.org/2005/08/addressing" 
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" 
+	xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+	<wsp:Policy wsu:Id="DefaultDpoServiceEndpoint_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<wsaw:UsingAddressing/>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://towerswatson.com/rto/dpo/services/2010/01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:import namespace="http://towerswatson.com/rto/smf/types/2010/01"/>
+			<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xs:import namespace="http://towerswatson.com/rto/dpo/types/2010/01"/>
+			<xs:element name="PofRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="PofrCollection" nillable="true" type="q1:PofrInformationCollectionDataContract" xmlns:q1="http://towerswatson.com/rto/smf/types/2010/01"/>
+						<xs:element minOccurs="0" name="Time" type="xs:dateTime"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PofResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string"/>
+						<xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string"/>
+						<xs:element minOccurs="0" name="PofCollection" nillable="true" type="q2:PofInformationCollectionDataContract" xmlns:q2="http://towerswatson.com/rto/smf/types/2010/01"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PofRequestUsingMasterSet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Time" type="xs:dateTime"/>
+						<xs:element minOccurs="0" name="PofrCollection" nillable="true" type="q3:PofrInformationCollectionDataContract" xmlns:q3="http://towerswatson.com/rto/smf/types/2010/01"/>
+						<xs:element minOccurs="0" name="MasterSetId" type="q4:guid" xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PofResponse2">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="MetaData" nillable="true" type="q5:PofrResponse2DataContract" xmlns:q5="http://towerswatson.com/rto/dpo/types/2010/01"/>
+						<xs:element minOccurs="0" name="PofCollection" nillable="true" type="q6:PofInformationCollectionDataContract" xmlns:q6="http://towerswatson.com/rto/smf/types/2010/01"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PofRequestUsingKey">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Time" type="xs:dateTime"/>
+						<xs:element minOccurs="0" name="PofrCollection" nillable="true" type="q7:PofrInformationCollectionDataContract" xmlns:q7="http://towerswatson.com/rto/smf/types/2010/01"/>
+						<xs:element minOccurs="0" name="KeyName" nillable="true" type="xs:string"/>
+						<xs:element minOccurs="0" name="KeyRequestTime" nillable="true" type="xs:dateTime"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+		<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+			<xs:element name="anyType" nillable="true" type="xs:anyType"/>
+			<xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+			<xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+			<xs:element name="boolean" nillable="true" type="xs:boolean"/>
+			<xs:element name="byte" nillable="true" type="xs:byte"/>
+			<xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+			<xs:element name="decimal" nillable="true" type="xs:decimal"/>
+			<xs:element name="double" nillable="true" type="xs:double"/>
+			<xs:element name="float" nillable="true" type="xs:float"/>
+			<xs:element name="int" nillable="true" type="xs:int"/>
+			<xs:element name="long" nillable="true" type="xs:long"/>
+			<xs:element name="QName" nillable="true" type="xs:QName"/>
+			<xs:element name="short" nillable="true" type="xs:short"/>
+			<xs:element name="string" nillable="true" type="xs:string"/>
+			<xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+			<xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+			<xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+			<xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+			<xs:element name="char" nillable="true" type="tns:char"/>
+			<xs:simpleType name="char">
+				<xs:restriction base="xs:int"/>
+			</xs:simpleType>
+			<xs:element name="duration" nillable="true" type="tns:duration"/>
+			<xs:simpleType name="duration">
+				<xs:restriction base="xs:duration">
+					<xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+					<xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+					<xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="guid" nillable="true" type="tns:guid"/>
+			<xs:simpleType name="guid">
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:attribute name="FactoryType" type="xs:QName"/>
+			<xs:attribute name="Id" type="xs:ID"/>
+			<xs:attribute name="Ref" type="xs:IDREF"/>
+		</xs:schema>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://towerswatson.com/rto/smf/types/2010/01" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://towerswatson.com/rto/smf/types/2010/01" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+			<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xs:complexType name="PofrInformationCollectionDataContract">
+				<xs:sequence>
+					<xs:element minOccurs="0" maxOccurs="unbounded" name="PofrInformationDataContract" nillable="true" type="tns:PofrInformationDataContract"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PofrInformationCollectionDataContract" nillable="true" type="tns:PofrInformationCollectionDataContract"/>
+			<xs:complexType name="PofrInformationDataContract">
+				<xs:sequence>
+					<xs:element name="Pofr" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PofrInformationDataContract" nillable="true" type="tns:PofrInformationDataContract"/>
+			<xs:complexType name="PofInformationCollectionDataContract">
+				<xs:sequence>
+					<xs:element minOccurs="0" maxOccurs="unbounded" name="PofInformationDataContract" nillable="true" type="tns:PofInformationDataContract"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PofInformationCollectionDataContract" nillable="true" type="tns:PofInformationCollectionDataContract"/>
+			<xs:complexType name="PofInformationDataContract">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Pof" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="MIDataCollection" nillable="true" type="tns:MIDataCollectionDataContract"/>
+					<xs:element minOccurs="0" name="PofMetadata" nillable="true" type="tns:PofMetadataDataContract"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PofInformationDataContract" nillable="true" type="tns:PofInformationDataContract"/>
+			<xs:complexType name="MIDataCollectionDataContract">
+				<xs:sequence>
+					<xs:element minOccurs="0" maxOccurs="unbounded" name="MIDataDataContract" nillable="true" type="tns:MIDataDataContract"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="MIDataCollectionDataContract" nillable="true" type="tns:MIDataCollectionDataContract"/>
+			<xs:complexType name="MIDataDataContract">
+				<xs:sequence>
+					<xs:element name="Name" nillable="true" type="xs:string"/>
+					<xs:element name="DataType" type="tns:DataType"/>
+					<xs:element name="Data" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="MIDataDataContract" nillable="true" type="tns:MIDataDataContract"/>
+			<xs:simpleType name="DataType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Undefined"/>
+					<xs:enumeration value="Int32"/>
+					<xs:enumeration value="Float"/>
+					<xs:enumeration value="String"/>
+					<xs:enumeration value="Boolean"/>
+					<xs:enumeration value="DateTime"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="DataType" nillable="true" type="tns:DataType"/>
+			<xs:complexType name="PofMetadataDataContract">
+				<xs:sequence>
+					<xs:element name="ScheduleId" type="ser:guid"/>
+					<xs:element name="MasterSetId" type="ser:guid"/>
+					<xs:element name="StrategyIndex" nillable="true" type="xs:int"/>
+					<xs:element name="ConfigSetId" nillable="true" type="ser:guid"/>
+					<xs:element minOccurs="0" name="ModelRevisionId" nillable="true" type="ser:guid"/>
+					<xs:element minOccurs="0" name="RequestedMasterSetId" nillable="true" type="ser:guid"/>
+					<xs:element minOccurs="0" name="ScheduleAliasOfId" nillable="true" type="ser:guid"/>
+					<xs:element minOccurs="0" name="KeyName" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="KeyStartTime" nillable="true" type="xs:dateTime"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PofMetadataDataContract" nillable="true" type="tns:PofMetadataDataContract"/>
+		</xs:schema>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://towerswatson.com/rto/dpo/types/2010/01" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://towerswatson.com/rto/dpo/types/2010/01" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+			<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xs:complexType name="ConfigurationFaultContract">
+				<xs:sequence>
+					<xs:element name="ErrorCode" type="ser:guid"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ConfigurationFaultContract" nillable="true" type="tns:ConfigurationFaultContract"/>
+			<xs:complexType name="SevereFaultContract">
+				<xs:sequence>
+					<xs:element name="ErrorCode" type="ser:guid"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="SevereFaultContract" nillable="true" type="tns:SevereFaultContract"/>
+			<xs:complexType name="PofrResponse2DataContract">
+				<xs:sequence>
+					<xs:element name="ErrorCode" nillable="true" type="xs:string"/>
+					<xs:element name="ErrorMessage" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="Diagnostics" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PofrResponse2DataContract" nillable="true" type="tns:PofrResponse2DataContract"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="PofRequest">
+		<wsdl:part name="parameters" element="tns:PofRequest"/>
+	</wsdl:message>
+	<wsdl:message name="PofResponse">
+		<wsdl:part name="parameters" element="tns:PofResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DpoService_GetPof_ConfigurationFaultContractFault_FaultMessage">
+		<wsdl:part name="detail" element="q1:ConfigurationFaultContract" xmlns:q1="http://towerswatson.com/rto/dpo/types/2010/01"/>
+	</wsdl:message>
+	<wsdl:message name="DpoService_GetPof_SevereFaultContractFault_FaultMessage">
+		<wsdl:part name="detail" element="q2:SevereFaultContract" xmlns:q2="http://towerswatson.com/rto/dpo/types/2010/01"/>
+	</wsdl:message>
+	<wsdl:message name="PofRequestUsingMasterSet">
+		<wsdl:part name="parameters" element="tns:PofRequestUsingMasterSet"/>
+	</wsdl:message>
+	<wsdl:message name="PofResponse2">
+		<wsdl:part name="parameters" element="tns:PofResponse2"/>
+	</wsdl:message>
+	<wsdl:message name="DpoService_GetPofWithId_ConfigurationFaultContractFault_FaultMessage">
+		<wsdl:part name="detail" element="q3:ConfigurationFaultContract" xmlns:q3="http://towerswatson.com/rto/dpo/types/2010/01"/>
+	</wsdl:message>
+	<wsdl:message name="DpoService_GetPofWithId_SevereFaultContractFault_FaultMessage">
+		<wsdl:part name="detail" element="q4:SevereFaultContract" xmlns:q4="http://towerswatson.com/rto/dpo/types/2010/01"/>
+	</wsdl:message>
+	<wsdl:message name="PofRequestUsingKey">
+		<wsdl:part name="parameters" element="tns:PofRequestUsingKey"/>
+	</wsdl:message>
+	<wsdl:message name="DpoService_GetPofWithKey_ConfigurationFaultContractFault_FaultMessage">
+		<wsdl:part name="detail" element="q5:ConfigurationFaultContract" xmlns:q5="http://towerswatson.com/rto/dpo/types/2010/01"/>
+	</wsdl:message>
+	<wsdl:message name="DpoService_GetPofWithKey_SevereFaultContractFault_FaultMessage">
+		<wsdl:part name="detail" element="q6:SevereFaultContract" xmlns:q6="http://towerswatson.com/rto/dpo/types/2010/01"/>
+	</wsdl:message>
+	<wsdl:portType name="DpoService">
+		<wsdl:operation name="GetPof">
+			<wsdl:input wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoServiceContract/GetPof" name="PofRequest" message="tns:PofRequest"/>
+			<wsdl:output wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoService/GetPofResponse" name="PofResponse" message="tns:PofResponse"/>
+			<wsdl:fault wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoService/GetPofConfigurationFaultContractFault" name="ConfigurationFaultContractFault" message="tns:DpoService_GetPof_ConfigurationFaultContractFault_FaultMessage"/>
+			<wsdl:fault wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoService/GetPofSevereFaultContractFault" name="SevereFaultContractFault" message="tns:DpoService_GetPof_SevereFaultContractFault_FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetPofWithId">
+			<wsdl:input wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoServiceContract/GetPofWithId" name="PofRequestUsingMasterSet" message="tns:PofRequestUsingMasterSet"/>
+			<wsdl:output wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoService/GetPofWithIdResponse" name="PofResponse2" message="tns:PofResponse2"/>
+			<wsdl:fault wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoService/GetPofWithIdConfigurationFaultContractFault" name="ConfigurationFaultContractFault" message="tns:DpoService_GetPofWithId_ConfigurationFaultContractFault_FaultMessage"/>
+			<wsdl:fault wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoService/GetPofWithIdSevereFaultContractFault" name="SevereFaultContractFault" message="tns:DpoService_GetPofWithId_SevereFaultContractFault_FaultMessage"/>
+		</wsdl:operation>
+		<!-- http://stackoverflow.com/questions/12920350/name-of-the-input-output-element-must-be-unique-wsdl-spec -->
+		<wsdl:operation name="GetPofWithKey">
+			<wsdl:input wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoServiceContract/GetPofWithKey" name="PofRequestUsingKey" message="tns:PofRequestUsingKey"/>
+			<wsdl:output wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoService/GetPofWithKeyResponse" name="PofResponse2" message="tns:PofResponse2"/>
+			<wsdl:fault wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoService/GetPofWithKeyConfigurationFaultContractFault" name="ConfigurationFaultContractFault" message="tns:DpoService_GetPofWithKey_ConfigurationFaultContractFault_FaultMessage"/>
+			<wsdl:fault wsaw:Action="http://towerswatson.com/rto/dpo/services/2010/01/DpoService/GetPofWithKeySevereFaultContractFault" name="SevereFaultContractFault" message="tns:DpoService_GetPofWithKey_SevereFaultContractFault_FaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DefaultDpoServiceEndpoint" type="tns:DpoService">
+		<wsp:PolicyReference URI="#DefaultDpoServiceEndpoint_policy"/>
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="GetPof">
+			<soap12:operation soapAction="http://towerswatson.com/rto/dpo/services/2010/01/DpoServiceContract/GetPof" style="document"/>
+			<wsdl:input name="PofRequest">
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="PofResponse">
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ConfigurationFaultContractFault">
+				<soap12:fault use="literal" name="ConfigurationFaultContractFault" namespace=""/>
+			</wsdl:fault>
+			<wsdl:fault name="SevereFaultContractFault">
+				<soap12:fault use="literal" name="SevereFaultContractFault" namespace=""/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetPofWithId">
+			<soap12:operation soapAction="http://towerswatson.com/rto/dpo/services/2010/01/DpoServiceContract/GetPofWithId" style="document"/>
+			<wsdl:input name="PofRequestUsingMasterSet">
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="PofResponse2">
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ConfigurationFaultContractFault">
+				<soap12:fault use="literal" name="ConfigurationFaultContractFault" namespace=""/>
+			</wsdl:fault>
+			<wsdl:fault name="SevereFaultContractFault">
+				<soap12:fault use="literal" name="SevereFaultContractFault" namespace=""/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetPofWithKey">
+			<soap12:operation soapAction="http://towerswatson.com/rto/dpo/services/2010/01/DpoServiceContract/GetPofWithKey" style="document"/>
+			<wsdl:input name="PofRequestUsingKey">
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="PofResponse2">
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ConfigurationFaultContractFault">
+				<soap12:fault use="literal" name="ConfigurationFaultContractFault" namespace=""/>
+			</wsdl:fault>
+			<wsdl:fault name="SevereFaultContractFault">
+				<soap12:fault use="literal" name="SevereFaultContractFault" namespace=""/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DpoService">
+		<wsdl:port name="DefaultDpoServiceEndpoint" binding="tns:DefaultDpoServiceEndpoint">
+			<soap12:address location="http://radar1.dev.relianz.co.uk:376/DpoService.svc"/>
+			<wsa10:EndpointReference>
+				<wsa10:Address>http://radar1.dev.relianz.co.uk:376/DpoService.svc</wsa10:Address>
+			</wsa10:EndpointReference>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

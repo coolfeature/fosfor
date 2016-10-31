@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE tsung SYSTEM "/usr/share/tsung/tsung-1.0.dtd">
+
+<tsung loglevel="notice" version="1.0">
+
+	<!-- Nodes making calls -->
+	<clients>
+		<client host="localhost" use_controller_vm="true"/>
+	</clients>
+  
+	<!-- Server side setup -->
+	<servers>
+		<server host="dev-ph.relianz.co.uk" port="443" type="ssl"></server>
+	</servers>
+
+	<load>
+		<!-- For the first 2 minutes of test simulate arrival of 10 users per second 
+		<arrivalphase phase="1" duration="2" unit="minute">
+			<users arrivalrate="10" unit="second"></users>
+		</arrivalphase>
+		-->
+
+		<!-- NORMAL LOAD PHASE -->
+		<arrivalphase phase="1" duration="1" unit="minute">
+			<users arrivalrate="30" unit="second"></users>
+		</arrivalphase>
+
+		<!-- HEAVY LOAD PHASE -->
+		<arrivalphase phase="2" duration="1" unit="minute">
+			<users arrivalrate="100" unit="second"></users>
+		</arrivalphase>
+
+	</load>
+	
+	<!-- start a session for a http user. the probability is the
+	frequency of this type os session. The sum of all session's
+	probabilities must be 100 -->
+	
+	<sessions>
+		<session name="http-example" probability="100" type="ts_http">
+			<request> 
+				<http url="/ph-web/ws/rate" 
+					method="POST" 
+					version="1.1" 
+					contents_from_file="/home/sczaja/ph/request.soap" 
+					content_type="text/xml; charset=UTF-8">
+					<http_header name="SOAPAction" value="http://www.surething.co.uk/schemas/ph/getRate"/>
+				</http>
+			</request>
+		</session>
+	</sessions>
+</tsung>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" version="2.0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc">
+	
+	<!-- CDL IN -->
+	<jaxb:bindings schemaLocation="../xsd/cdl/requestMotor.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="uk.co.surething.ph.models.cdl.in" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    
+    <!-- CDL OUT -->
+	<jaxb:bindings schemaLocation="../xsd/cdl/responseMotor.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="uk.co.surething.ph.models.cdl.out" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    
+	<!-- RADAR -->
+    <jaxb:bindings schemaLocation="../xsd/radar/radar_v1.xsd">
+        <jaxb:schemaBindings>	
+            <jaxb:package name="uk.co.surething.ph.models.radar" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+	<!-- PH -->
+    <jaxb:bindings schemaLocation="../xsd/ph/ph.xsd">
+        <jaxb:schemaBindings>	
+            <jaxb:package name="uk.co.surething.ph.models.ph" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+
+	<jaxb:globalBindings>
+		
+		<xjc:javaType name="java.time.ZonedDateTime" xmlType="xs:dateTime"
+			adapter="uk.co.surething.ph.models.DateTimeSerializer" />
+
+		<xjc:javaType name="java.time.ZonedDateTime" xmlType="xs:time"
+			adapter="uk.co.surething.ph.models.DateTimeSerializer" />
+
+		<xjc:javaType name="java.time.ZonedDateTime" xmlType="xs:date"
+			adapter="uk.co.surething.ph.models.DateTimeSerializer" />
+
+	</jaxb:globalBindings>
+	
+</bindings>

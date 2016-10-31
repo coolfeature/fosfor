@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>uk.co.surething</groupId>
+		<artifactId>ph</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<groupId>uk.co.surething.ph</groupId>
+	<packaging>jar</packaging>
+	<artifactId>ph-dao</artifactId>
+	<name>ph-dao</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>uk.co.surething.ph</groupId>
+			<artifactId>ph-models</artifactId>
+			<version>${ph.version}</version>
+		</dependency>
+	</dependencies>
+</project>

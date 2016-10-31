@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.surething.co.uk/schemas/ph/radar" 
+	xmlns="http://www.surething.co.uk/schemas/ph/radar">
+	
+	<!-- ATTRIBUTE TYPES -->
+	
+	<!-- Special Types 
+	<xs:simpleType name="twoDigitNumber">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[0-9][0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="age">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="120"/>
+		</xs:restriction>
+	</xs:simpleType>
+	-->
+	
+	<!-- ELEMENT TYPES -->
+		
+	<xs:include schemaLocation="elements.xsd"/>
+	
+	<xs:complexType name="quote">
+		<xs:sequence>
+			<xs:element ref="Quote_Number"/>
+			<xs:element ref="Policy_Type"/>
+			<xs:element ref="Policy_Radar_Version"/>
+			<xs:element ref="Policy_Test_Group"/>
+			<xs:element ref="Policy_Rated_Driver"/>
+			<xs:element ref="Prem_Quote_to_Panel"/>
+			<xs:element ref="BusinessRules_Result"/>
+			<xs:element ref="BusinessRules_DetailedResult"/>
+			<xs:element ref="BusinessRules_DataValidation"/>
+			<xs:element ref="BusinessRules_ErrorMessages"/>
+			<xs:element ref="BusinessRules_Endorsements"/>
+			<xs:element ref="Policy_Compulsory_XS"/>
+			<xs:element ref="Prem_Contrib_to_Expenses"/>
+			<xs:element ref="Prem_claims"/>
+			<xs:element ref="Prem_large_claims"/>
+			<xs:element ref="Prem_expenses"/>
+			<xs:element ref="Prem_RI"/>
+			<xs:element ref="Prem_Levies"/>
+			<xs:element ref="d1_Named_Driver_Age"/>
+			<xs:element ref="d1_residenceYears"/>
+			<xs:element ref="d1_Named_Driver_Experience_Years"/>
+			<xs:element ref="d2_Named_Driver_Age"/>
+			<xs:element ref="d2_residenceYears"/>
+			<xs:element ref="d2_Named_Driver_Experience_Years"/>
+			<xs:element ref="d3_Named_Driver_Age"/>
+			<xs:element ref="d3_residenceYears"/>
+			<xs:element ref="d3_Named_Driver_Experience_Years"/>
+			<xs:element ref="d4_Named_Driver_Age"/>
+			<xs:element ref="d4_residenceYears"/>
+			<xs:element ref="d4_Named_Driver_Experience_Years"/>
+			<xs:element ref="d5_Named_Driver_Age"/>
+			<xs:element ref="d5_residenceYears"/>
+			<xs:element ref="d5_Named_Driver_Experience_Years"/>
+			<xs:element ref="Worst_Non_Rated_Driver_Age"/>
+			<xs:element ref="Worst_Non_Rated_Driver_YHL"/>
+			<xs:element ref="Worst_Non_Rated_Driver_ResidenceYears"/>
+			<xs:element ref="Worst_Non_Rated_Driver_MaritalStatus"/>
+			<xs:element ref="Worst_Non_Rated_Driver_Occupation"/>
+			<xs:element ref="ClnP_Usage"/>
+			<xs:element ref="ClnP_DOB"/>
+			<xs:element ref="ClnP_Gender_Code"/>
+			<xs:element ref="ClnP_Marital_Status_Code"/>
+			<xs:element ref="ClnP_Refused_Insurance_Flag"/>
+			<xs:element ref="ClnP_Previous_Convictions_Flag"/>
+			<xs:element ref="ClnP_Smoker_Flag"/>
+			<xs:element ref="ClnP_Occupation"/>
+			<xs:element ref="ClnP_Occupation_Status"/>
+			<xs:element ref="ClnP_Employer"/>
+			<xs:element ref="ClnP_Part_Time_Occupation"/>
+			<xs:element ref="ClnP_Part_Time_Occupation_Status"/>
+			<xs:element ref="ClnP_Part_Time_Employer"/>
+			<xs:element ref="ClnP_Number_of_Other_Vehicles"/>
+			<xs:element ref="Policy_Date_of_First_Quote"/>
+			<xs:element ref="Policy_Inception_DateTime"/>
+			<xs:element ref="Policy_Start_DateTime"/>
+			<xs:element ref="Risk_Start_DateTime"/>
+			<xs:element ref="Risk_Postcode"/>
+			<xs:element ref="Policy_Postcode"/>
+			<xs:element ref="Policy_Source_Original"/>
+			<xs:element ref="Policy_Source_Current"/>
+			<xs:element ref="Agency"/>
+			<xs:element ref="Risk_Affinity_Code"/>
+			<xs:element ref="Policy_Branch"/>
+			<xs:element ref="NCB_Years"/>
+			<xs:element ref="Claim_Free_Years"/>
+			<xs:element ref="NCB_Source"/>
+			<xs:element ref="Voluntary_Excess"/>
+			<xs:element ref="Cover_Type_Detail"/>
+			<xs:element ref="Previous_Payment_Method"/>
+			<xs:element ref="Policy_Frequency"/>
+			<xs:element ref="Quote_Type"/>
+			<xs:element ref="Annual_Mileage"/>
+			<xs:element ref="Annual_Business_Mileage"/>
+			<xs:element ref="Class_of_Use_Code"/>
+			<xs:element ref="Protected_NCB"/>
+			<xs:element ref="Driving_Restrictions"/>
+			<xs:element ref="Proposer_Is_Keeper_Flag"/>
+			<xs:element ref="Owner_Type"/>
+			<xs:element ref="Vehicle_Type"/>
+			<xs:element ref="Year_of_Make"/>
+			<xs:element ref="Purchase_Date"/>
+			<xs:element ref="Price_Paid"/>
+			<xs:element ref="Present_Market_Value"/>
+			<xs:element ref="Where_Kept"/>
+			<xs:element ref="Alarm"/>
+			<xs:element ref="Immobiliser"/>
+			<xs:element ref="Tracker"/>
+			<xs:element ref="Body"/>
+			<xs:element ref="Vehicle_Modification_Flag"/>
+			<xs:element ref="Modification1"/>
+			<xs:element ref="Modification2"/>
+			<xs:element ref="Modification3"/>
+			<xs:element ref="Modification4"/>
+			<xs:element ref="Modification5"/>
+			<xs:element ref="Left_Hand_Drive_Flag"/>
+			<xs:element ref="ABS_Flag"/>
+			<xs:element ref="Number_of_Doors"/>
+			<xs:element ref="Number_of_Seats"/>
+			<xs:element ref="Fuel"/>
+			<xs:element ref="Transmission"/>
+			<xs:element ref="Previous_Bonus_Protect_Flag"/>
+			<xs:element ref="Vehicle_Colour"/>
+			<xs:element ref="Vehicle_Finish"/>
+			<xs:element ref="d1_Named_Driver_Id"/>
+			<xs:element ref="d1_Named_Driver_DOB"/>
+			<xs:element ref="d1_Named_Driver_Gender"/>
+			<xs:element ref="d1_Named_Driver_Marital_Status"/>
+			<xs:element ref="d1_Named_Driver_Occupation"/>
+			<xs:element ref="d1_Named_Driver_Employer"/>
+			<xs:element ref="d1_Named_Driver_Occupation_Status"/>
+			<xs:element ref="d1_Named_Driver_Part_Time_Occupation"/>
+			<xs:element ref="d1_Named_Driver_Part_Time_Employer"/>
+			<xs:element ref="d1_Named_Driver_Part_Time_Occupation_Status"/>
+			<xs:element ref="d1_UkResidencyDate"/>
+			<xs:element ref="d1_Relation_To_Proposer"/>
+			<xs:element ref="d1_Driver_Type"/>
+			<xs:element ref="d1_Access_To_Other_Vehicles"/>
+			<xs:element ref="d1_Use_of_Vehicle"/>
+			<xs:element ref="d1_Licence_Category"/>
+			<xs:element ref="d1_Licence_Type"/>
+			<xs:element ref="d1_Number_of_Tests_Taken"/>
+			<xs:element ref="d1_Test_Passed_Date"/>
+			<xs:element ref="d1o1_Convictions_Details_Code"/>
+			<xs:element ref="d1o1_Offence_Date_Id"/>
+			<xs:element ref="d1o1_Number_of_Conviction_Points"/>
+			<xs:element ref="d1o1_Fine_Amount"/>
+			<xs:element ref="d1o1_Number_of_Months_Suspended"/>
+			<xs:element ref="d1o1_Drink_ReadingType"/>
+			<xs:element ref="d1o1_Drink_ReadingValue"/>
+			<xs:element ref="D1O2_Repeat_D1O1"/>
+			<xs:element ref="D1O3_Repeat_D1O1"/>
+			<xs:element ref="D1O4_Repeat_D1O1"/>
+			<xs:element ref="D1O5_Repeat_D1O1"/>
+			<xs:element ref="d1c1_Claim_Category"/>
+			<xs:element ref="d1c1_Incident_Date_Id"/>
+			<xs:element ref="d1c1_NCB_Prejudiced_Flag"/>
+			<xs:element ref="d1c1_Own_Damage_Cost"/>
+			<xs:element ref="d1c1_Personal_Injury_Flag"/>
+			<xs:element ref="d1c1_Third_Party_Cost"/>
+			<xs:element ref="d1c1_Under_This_Policy_Flag"/>
+			<xs:element ref="D1C2_Repeat_D1C1"/>
+			<xs:element ref="D1C3_Repeat_D1C1"/>
+			<xs:element ref="D1C4_Repeat_D1C1"/>
+			<xs:element ref="D1C5_Repeat_D1C1"/>
+			<xs:element ref="DRIVER_2"/>
+			<xs:element ref="DRIVER_3"/>
+			<xs:element ref="DRIVER_4"/>
+			<xs:element ref="DRIVER_5"/>
+			<xs:element ref="Postcode_Group1"/>
+			<xs:element ref="Postcode_Group2"/>
+			<xs:element ref="Postcode_Group3"/>
+			<xs:element ref="Postcode_Group4"/>
+			<xs:element ref="Postcode_Group5"/>
+			<xs:element ref="Postcode_Group6"/>
+			<xs:element ref="Postcode_Group7"/>
+			<xs:element ref="Postcode_Group8"/>
+			<xs:element ref="Postcode_Group9"/>
+			<xs:element ref="Postcode_Group10"/>
+			<xs:element ref="Postcode_Group11"/>
+			<xs:element ref="Postcode_Group12"/>
+			<xs:element ref="Postcode_Group13"/>
+			<xs:element ref="Postcode_Group14"/>
+			<xs:element ref="Postcode_Group15"/>
+			<xs:element ref="Postcode_Group_Version"/>
+			<xs:element ref="Postcode_Sector_Not_Found"/>
+			<xs:element ref="Vehicle_Group1"/>
+			<xs:element ref="Vehicle_Group2"/>
+			<xs:element ref="Vehicle_Group3"/>
+			<xs:element ref="Vehicle_Group4"/>
+			<xs:element ref="Vehicle_Group5"/>
+			<xs:element ref="Vehicle_Group6"/>
+			<xs:element ref="Vehicle_Group7"/>
+			<xs:element ref="Vehicle_Group8"/>
+			<xs:element ref="Vehicle_Group9"/>
+			<xs:element ref="Vehicle_Group10"/>
+			<xs:element ref="Vehicle_Group_Version"/>
+			<xs:element ref="Vehicle_Not_Matched_Flag"/>
+			<xs:element ref="Existing_customer_same_vehicle"/>
+			<xs:element ref="Existing_customer_different_vehicle"/>
+			<xs:element ref="Time_since_last_on_cover_with_Surething"/>
+			<xs:element ref="Number_of_previous_policies"/>
+			<xs:element ref="Number_of_previous_renewals"/>
+			<xs:element ref="Number_defaults_on_previous_policies"/>
+			<xs:element ref="Number_of_cancellations"/>
+			<xs:element ref="Number_of_MTAs_with_Surething_Broker"/>
+			<xs:element ref="Number_of_vehicle_change_MTAs_with_Surething_Broker"/>
+			<xs:element ref="Number_of_claims_with_Surething_Broker"/>
+			<xs:element ref="Previous_Policy_Annual_Premium"/>
+			<xs:element ref="Previous_Compulsory_Excess"/>
+			<xs:element ref="Actual_Payment_Method"/>
+			<xs:element ref="Auto_Renew"/>
+			<xs:element ref="Missed_Payment_Flag"/>
+			<xs:element ref="NB_Inception_Gap"/>
+			<xs:element ref="Tenure_Relianz"/>
+			<xs:element ref="Tenure_Surething_Broker"/>
+			<xs:element ref="Pass_Plus"/>
+			<xs:element ref="Own_Insurance_Last_12_months"/>
+			<xs:element ref="Provided_Driving_Licence"/>
+			<xs:element ref="Vehicle_Used_Wedding_Hire"/>
+			<xs:element ref="Side_Car_Fitted_Flag"/>
+			<xs:element ref="Exclude_Pillion_Flag"/>
+			<xs:element ref="Gross_Weight"/>
+			<xs:element ref="Trailer_Weight"/>
+			<xs:element ref="Radius_Limit"/>
+			<xs:element ref="Van_Racking"/>
+			<xs:element ref="Van_Signage"/>
+			<xs:element ref="Van_Public_Liability"/>
+			<xs:element ref="Van_DrinkDrive_Course"/>
+			<xs:element ref="Van_Previous_Policy_Made_Void"/>
+			<xs:element ref="Van_Num_CCJS"/>
+			<xs:element ref="Van_Refridgerated"/>
+			<xs:element ref="Van_Business_Established_Months"/>
+			<xs:element ref="Van_Special_Apparatus"/>
+			<xs:element ref="Van_NCB_Other_Vehicles"/>
+			<xs:element ref="Van_Hazardous_Goods"/>
+			<xs:element ref="Van_Years_Held_Insurance"/>
+			<xs:element ref="Van_Trade_Body_Member"/>
+			<xs:element ref="Van_Driving_Experience"/>
+			<xs:element ref="Van_Trailers"/>
+			<xs:element ref="Multiple_product_information"/>
+
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="root">
+		<xs:sequence>
+			<xs:element name="Quote" type="quote"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- ELEMENTS -->
+	
+	<xs:element name="root"/>
+	
+	
+</xs:schema>

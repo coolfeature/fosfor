@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:complexType name="quoteNumber">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policyType">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policyRadarVersion">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policyTestGroup">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policyRatedDriver">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="premQuoteToPanel">
+	<xs:attribute name="value" type="xs:decimal" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="businessrulesResult">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="businessrulesDetailedresult">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="businessrulesDatavalidation">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="businessrulesErrormessages">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="businessrulesEndorsements">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policyCompulsoryXs">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="premContribToExpenses">
+	<xs:attribute name="value" type="xs:decimal" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="premClaims">
+	<xs:attribute name="value" type="xs:decimal" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="premLargeClaims">
+	<xs:attribute name="value" type="xs:decimal" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="premExpenses">
+	<xs:attribute name="value" type="xs:decimal" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="premRi">
+	<xs:attribute name="value" type="xs:decimal" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="premLevies">
+	<xs:attribute name="value" type="xs:decimal" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverAge">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1Residenceyears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverExperienceYears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d2NamedDriverAge">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d2Residenceyears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d2NamedDriverExperienceYears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d3NamedDriverAge">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d3Residenceyears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d3NamedDriverExperienceYears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d4NamedDriverAge">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d4Residenceyears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d4NamedDriverExperienceYears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d5NamedDriverAge">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d5Residenceyears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d5NamedDriverExperienceYears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="worstNonRatedDriverAge">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="worstNonRatedDriverYhl">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="worstNonRatedDriverResidenceyears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="worstNonRatedDriverMaritalstatus">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="worstNonRatedDriverOccupation">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpUsage">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpDob">
+	<xs:attribute name="value" type="xs:dateTime" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpGenderCode">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpMaritalStatusCode">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpRefusedInsuranceFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpPreviousConvictionsFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpSmokerFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpOccupation">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpOccupationStatus">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpEmployer">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpPartTimeOccupation">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpPartTimeOccupationStatus">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpPartTimeEmployer">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="clnpNumberOfOtherVehicles">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policyDateOfFirstQuote">
+	<xs:attribute name="value" type="xs:dateTime" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policyInceptionDatetime">
+	<xs:attribute name="value" type="xs:dateTime" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policyStartDatetime">
+	<xs:attribute name="value" type="xs:dateTime" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="riskStartDatetime">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="riskPostcode">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policyPostcode">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policySourceOriginal">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policySourceCurrent">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="agency">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="riskAffinityCode">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policyBranch">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="ncbYears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="claimFreeYears">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="ncbSource">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="voluntaryExcess">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="coverTypeDetail">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="previousPaymentMethod">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="policyFrequency">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="quoteType">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="annualMileage">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="annualBusinessMileage">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="classOfUseCode">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="protectedNcb">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="drivingRestrictions">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="proposerIsKeeperFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="ownerType">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleType">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="yearOfMake">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="purchaseDate">
+	<xs:attribute name="value" type="xs:dateTime" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="pricePaid">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="presentMarketValue">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="whereKept">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="alarm">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="immobiliser">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="tracker">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="body">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleModificationFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="modification1">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="modification2">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="modification3">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="modification4">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="modification5">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="leftHandDriveFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="absFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="numberOfDoors">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="numberOfSeats">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="fuel">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="transmission">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="previousBonusProtectFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleColour">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleFinish">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverId">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverDob">
+	<xs:attribute name="value" type="xs:dateTime" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverGender">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverMaritalStatus">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverOccupation">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverEmployer">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverOccupationStatus">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverPartTimeOccupation">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverPartTimeEmployer">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NamedDriverPartTimeOccupationStatus">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1Ukresidencydate">
+	<xs:attribute name="value" type="xs:dateTime" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1RelationToProposer">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1DriverType">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1AccessToOtherVehicles">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1UseOfVehicle">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1LicenceCategory">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1LicenceType">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1NumberOfTestsTaken">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1TestPassedDate">
+	<xs:attribute name="value" type="xs:dateTime" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1o1ConvictionsDetailsCode">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1o1OffenceDateId">
+	<xs:attribute name="value" type="xs:dateTime" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1o1NumberOfConvictionPoints">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1o1FineAmount">
+	<xs:attribute name="value" type="xs:decimal" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1o1NumberOfMonthsSuspended">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1o1DrinkReadingtype">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1o1DrinkReadingvalue">
+	<xs:attribute name="value" type="xs:decimal" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1o2RepeatD1O1">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1o3RepeatD1O1">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1o4RepeatD1O1">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1o5RepeatD1O1">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1c1ClaimCategory">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1c1IncidentDateId">
+	<xs:attribute name="value" type="xs:dateTime" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1c1NcbPrejudicedFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1c1OwnDamageCost">
+	<xs:attribute name="value" type="xs:decimal" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1c1PersonalInjuryFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1c1ThirdPartyCost">
+	<xs:attribute name="value" type="xs:decimal" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1c1UnderThisPolicyFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1c2RepeatD1C1">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1c3RepeatD1C1">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1c4RepeatD1C1">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="d1c5RepeatD1C1">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="driver2">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="driver3">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="driver4">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="driver5">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup1">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup2">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup3">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup4">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup5">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup6">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup7">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup8">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup9">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup10">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup11">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup12">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup13">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup14">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroup15">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeGroupVersion">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="postcodeSectorNotFound">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleGroup1">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleGroup2">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleGroup3">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleGroup4">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleGroup5">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleGroup6">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleGroup7">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleGroup8">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleGroup9">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleGroup10">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleGroupVersion">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleNotMatchedFlag">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="existingCustomerSameVehicle">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="existingCustomerDifferentVehicle">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="timeSinceLastOnCoverWithSurething">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="numberOfPreviousPolicies">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="numberOfPreviousRenewals">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="numberDefaultsOnPreviousPolicies">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="numberOfCancellations">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="numberOfMtasWithSurethingBroker">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="numberOfVehicleChangeMtasWithSurethingBroker">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="numberOfClaimsWithSurethingBroker">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="previousPolicyAnnualPremium">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="previousCompulsoryExcess">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="actualPaymentMethod">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="autoRenew">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="missedPaymentFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="nbInceptionGap">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="tenureRelianz">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="tenureSurethingBroker">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="passPlus">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="ownInsuranceLast12Months">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="providedDrivingLicence">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vehicleUsedWeddingHire">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="sideCarFittedFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="excludePillionFlag">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="grossWeight">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="trailerWeight">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="radiusLimit">
+	<xs:attribute name="value" type="xs:integer" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanRacking">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanSignage">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanPublicLiability">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanDrinkdriveCourse">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanPreviousPolicyMadeVoid">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanNumCcjs">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanRefridgerated">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanBusinessEstablishedMonths">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanSpecialApparatus">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanNcbOtherVehicles">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanHazardousGoods">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanYearsHeldInsurance">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanTradeBodyMember">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanDrivingExperience">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="vanTrailers">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="multipleProductInformation">
+	<xs:attribute name="value" type="xs:string" use="required"/>
+</xs:complexType>
+
+
+</xs:schema>

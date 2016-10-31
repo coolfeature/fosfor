@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.cdl.co.uk/schemas/ihp/response" xmlns="http://www.cdl.co.uk/schemas/ihp/response">
+
+	<!-- Simple types -->
+	<xs:simpleType name="coverCodeTypeList">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="C" />
+			<xs:enumeration value="F" />
+			<xs:enumeration value="T" />			
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="dateFormatType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{2}[/][0-9]{2}[/][0-9]{4}"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="driversAllowedCodeTypeList">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="IO" />
+			<xs:enumeration value="IS" />
+			<xs:enumeration value="ND" />
+			<xs:enumeration value="AD" />	
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="driversAllowedNumberTypeList">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="17" />
+    		<xs:maxInclusive value="99"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="driversAllowedTypeList">
+		<xs:union memberTypes="driversAllowedCodeTypeList driversAllowedNumberTypeList" />
+	</xs:simpleType>
+	
+	<xs:simpleType name="coverPeriodCodeTypeList">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A" />
+			<xs:enumeration value="B" />
+			<xs:enumeration value="T" />
+			<xs:enumeration value="X" />
+			<xs:enumeration value="V" />						
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="coverPeriodNumberTypeList">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="9" />
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="coverPeriodTypeList">
+		<xs:union memberTypes="coverPeriodCodeTypeList coverPeriodNumberTypeList" />
+	</xs:simpleType>
+	
+	<xs:simpleType name="driverPrnFormatType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="5" />
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="endorsementResultCodeFormatType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+			<xs:pattern value="[a-zA-Z0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>		
+	
+	<xs:simpleType name="endorsementResultValueFormatType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="99999" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="excessBreakdownResultAmountFormatType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="99999" />
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="freeFormat70Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="70"/>
+		</xs:restriction>
+	</xs:simpleType>			
+	
+	<xs:simpleType name="freeFormat60Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="iptFormatType">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="99" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ncdClaimedDiscountTypeList">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="2" />
+		</xs:restriction>
+	</xs:simpleType>				
+	
+	<xs:simpleType name="ncdClaimedYearsFormatType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="99" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ncdEntitlementReasonTypeList">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ND" />
+			<xs:enumeration value="CC" />
+			<xs:enumeration value="CS" />		
+			<xs:enumeration value="PC" />
+			<xs:enumeration value="PA" />
+			<xs:enumeration value="CV" />
+			<xs:enumeration value="GV" />
+			<xs:enumeration value="MC" />
+			<xs:enumeration value="B1" />
+			<xs:enumeration value="B2" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="notesReferenceFormatType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([A-Z0-9]{3}|[A-Z0-9]{4})([\-][0-9]+)?"/>
+		</xs:restriction>
+	</xs:simpleType>				
+	
+	<xs:simpleType name="postcodeFormatType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(GIR 0AA)|(((XX[0-9][0-9]?)|([A-Z-[QVX]][0-9][0-9]?)|(([A-Z-[QVX]][A-Z-[IJZ]][0-9][0-9]?)|(([A-Z-[QVX]][0-9][A-HJKSTUW])|([A-Z-[QVX]][A-Z-[IJZ]][0-9][ABEHMNPRVWXY])))) [0-9][A-Z-[CIKMOV]]{2})" />
+		</xs:restriction>	
+	</xs:simpleType>	
+	
+	<xs:simpleType name="premiumFormatType">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="-100000" />
+			<xs:maxInclusive value="100000" />
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="processingIndTypeList">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="02" />
+			<xs:enumeration value="04" />
+			<xs:enumeration value="05" />
+			<xs:enumeration value="14" />
+			<xs:enumeration value="10" />
+			<xs:enumeration value="22" />
+			<xs:enumeration value="08" />
+			<xs:enumeration value="36" />
+			<xs:enumeration value="37" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="usesAbiCodeTypeList">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S" />
+			<xs:enumeration value="X" />
+			<xs:enumeration value="D" />
+			<xs:enumeration value="1" />
+			<xs:enumeration value="2" />
+			<xs:enumeration value="3" />
+			<xs:enumeration value="J" />
+			<xs:enumeration value="T" />
+			<xs:enumeration value="U" />
+			<xs:enumeration value="V" />
+			<xs:enumeration value="W" />
+			<xs:enumeration value="O" /> <!-- GV only -->
+			<xs:enumeration value="H" /> <!-- GV only -->		 
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="volxsAmountFormatType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+		</xs:restriction>
+	</xs:simpleType>		
+
+	<xs:simpleType name="yesNoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Y" />
+			<xs:enumeration value="N" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tranNameList">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="QuoteDetail" />
+			<xs:enumeration value="MTA" />
+			<xs:enumeration value="CancelAdd" />
+			<xs:enumeration value="Renewal" />
+			<xs:enumeration value="RenewalAdjustment" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- Complex types -->
+	
+	<xs:complexType name="integerValType">
+		<xs:attribute name="Val" type="xs:integer" use="required"/>
+	</xs:complexType>	
+	
+	<xs:complexType name="stringValType">
+		<xs:attribute name="Val" type="xs:string"  use="required" />
+	</xs:complexType>	
+
+	<xs:complexType name="doubleValType">
+		<xs:attribute name="Val" type="xs:double"  use="required" />
+	</xs:complexType>		
+	
+	<xs:complexType name="dateValType">
+		<xs:attribute name="Val" type="dateFormatType"  use="required" />
+	</xs:complexType>
+	
+	<xs:complexType name="yesNoValType">
+		<xs:attribute name="Val" type="yesNoType"  use="required" />
+	</xs:complexType>
+		
+	<xs:complexType name="polMessageType">	
+		<xs:sequence>
+			<xs:element name="TranResult" type="transactionType" />
+			<xs:element name="SchemeResult" type="schemesType" />
+		</xs:sequence>
+		<xs:attribute name="Type" type="xs:string" fixed="TransactionResponse" use="required"/>		
+		<xs:attribute name="Version" type="xs:integer" fixed="1" use="required"/>
+	</xs:complexType>	
+	
+	<xs:complexType name="transactionType">
+		<xs:attribute name="TranName" type="tranNameList" use="required"/>
+		<xs:attribute name="Completed" type="yesNoType" use="required"/>
+		<xs:attribute name="ErrorCount" type="xs:integer" use="required" />
+	</xs:complexType>	
+	
+	<xs:complexType name="schemesType">
+		<xs:sequence>
+			<xs:element name="PolData" type="polDataType" />
+		</xs:sequence>
+		<xs:attribute name="Ref" type="xs:string" use="required"/>
+		<xs:attribute name="Completed" type="yesNoType" use="required"/>
+		<xs:attribute name="ErrorCount" type="xs:integer" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="polDataType">
+		<xs:sequence>
+			<xs:element name="ProcessingIndicators" type="processingIndicatorsType" />
+			<xs:element name="Intermediary" type="intermediaryType" />
+			<xs:element name="Product" type="productType" minOccurs="0"/>
+			<xs:element name="ProposerPolicyholder" type="proposerPolicyholderType"/>
+			<xs:element name="Cover" type="coverType"/>
+			<xs:element name="Policy" type="policyType"/>
+			<xs:element name="InsurerRatingFactor" type="insurerRatingFactorType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Vehicle" type="vehicleType" maxOccurs="2"/>
+			<xs:element name="Miscellaneous" type="miscellaneousType" minOccurs="0"/>
+			<xs:element name="CalculatedResult" type="calculatedResultType"/>
+			<xs:element name="DeclineResult" type="declineResultType" minOccurs="0"/>
+			<xs:element name="Notes" type="notesType" minOccurs="0" maxOccurs="40"/>  
+			<xs:element name="CommunicationData" type="communicationDataType" minOccurs="0"/>
+			<xs:element name="EndorsementResult" type="endorsementResultType" minOccurs="0" maxOccurs="40"/>
+			<xs:element name="QuoteBreakdownResult" type="quoteBreakdownResultType" minOccurs="0" maxOccurs="40"/>
+			<xs:element name="ExcessBreakdownResult" type="excessBreakdownResultType" minOccurs="0" maxOccurs="40"/>			
+		</xs:sequence>
+		<xs:attribute name="Type" type="xs:string" fixed="Output" use="required"/>
+	</xs:complexType>	
+	
+	<xs:complexType name="processingIndicatorsType">
+		<xs:sequence>
+			<xs:element name="ProcessingIndicators_ProcessType" type="processingIndicatorsProcessType"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="processingIndicatorsProcessType">
+		<xs:attribute name="Val" type="processingIndTypeList" use="required"/>
+	</xs:complexType>	
+	
+	<xs:complexType name="intermediaryType">
+		<xs:sequence>
+			<xs:element name="Intermediary_Code" type="stringValType"/>
+			<xs:element name="Intermediary_BusinessSourceText" type="stringValType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="productType">
+		<xs:sequence>
+			<xs:element name="Product_SchemeVersionNumber" type="doubleValType" minOccurs="0"/>
+			<xs:element name="Product_Name" type="stringValType" minOccurs="0"/>
+			<xs:element name="Product_Code" type="stringValType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="calculatedResultType">
+		<xs:sequence>
+			<xs:element name="CalculatedResult_OriginalPremium" type="doubleValType" minOccurs="0"/>
+			<xs:element name="CalculatedResult_GuaranteedQuoteInd" type="yesNoValType" minOccurs="0"/>
+			<xs:element name="CalculatedResult_PremiumExclIpt" type="premiumExclIptType" minOccurs="0"/>
+			<xs:element name="CalculatedResult_PremiumInclIpt" type="premiumInclIptType" minOccurs="0"/>
+			<xs:element name="CalculatedResult_IptPct" type="iptPctType" minOccurs="0"/>
+			<xs:element name="CalculatedResult_AdjustmentPremiumExclIpt" type="premiumExclIptType" minOccurs="0"/>
+			<xs:element name="CalculatedResult_AdjustmentPremiumInclIpt" type="premiumInclIptType" minOccurs="0"/>
+			<xs:element name="CalculatedResult_CompulsoryXs" type="compulsoryXsType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="proposerPolicyholderType">
+		<xs:sequence>
+			<xs:element name="ProposerPolicyholder_Surname" type="stringValType"/>
+			<xs:element name="ProposerPolicyholder_TitleText" type="stringValType" minOccurs="0"/>
+			<xs:element name="ProposerPolicyholder_ForenameInitial1" type="stringValType"/>
+			<xs:element name="ProposerPolicyholder_DateOfBirth" type="dateValType"/>
+			<xs:element name="ProposerPolicyholder_AddressLine1" type="stringValType"/>
+			<xs:element name="ProposerPolicyholder_AddressLine2" type="stringValType" minOccurs="0"/>
+			<xs:element name="ProposerPolicyholder_AddressLine3" type="stringValType" minOccurs="0"/>
+			<xs:element name="ProposerPolicyholder_AddressLine4" type="stringValType" minOccurs="0"/>
+			<xs:element name="ProposerPolicyholder_PostCodeFull" type="postcodeType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="postcodeType">
+		<xs:attribute name="Val" type="postcodeFormatType"  use="required" />
+	</xs:complexType>	
+	
+	
+	<xs:complexType name="vehicleType">
+		<xs:sequence>
+			<xs:element name="Vehicle_TempAddlInd" type="yesNoValType" minOccurs="0"/>
+			<xs:element name="Vehicle_TempAddlDuration" type="integerValType" minOccurs="0"/>
+			<xs:element name="Uses" type="usesType"/>
+			<xs:element name="Vehicle_PostCodeFull" type="vehiclePostcodeType"/>
+			<xs:element name="Vehicle_RegNo" type="stringValType" minOccurs="0"/>
+			<xs:element name="Vehicle_Model" type="stringValType"/>
+			<xs:element name="Ncd" type="ncdType"/>			
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="usesType">
+		<xs:sequence>
+			<xs:element name="Uses_AbiCode" type="usesAbiCodeType"/>
+			<xs:element name="Uses_UsedByDriver1Ind" type="yesNoValType" minOccurs="0"/>
+			<xs:element name="Uses_UsedByDriver2Ind" type="yesNoValType" minOccurs="0"/>
+			<xs:element name="Uses_UsedByDriver3Ind" type="yesNoValType" minOccurs="0"/>
+			<xs:element name="Uses_UsedByDriver4Ind" type="yesNoValType" minOccurs="0"/>
+			<xs:element name="Uses_UsedByDriver5Ind" type="yesNoValType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ncdType">
+		<xs:sequence>
+			<xs:element name="Ncd_ClaimedYears" type="ncdClaimedYearsType"/>
+			<xs:element name="Ncd_ClaimedProtectionReqdInd" type="yesNoValType" minOccurs="0"/>
+			<xs:element name="Ncd_ClaimedDiscountType" type="ncdClaimedDiscountType" minOccurs="0"/>
+			<xs:element name="Ncd_ClaimedEntitlementReason" type="ncdEntitlementReasonType" minOccurs="0"/>
+			<xs:element name="Ncd_GrantedYears" type="ncdClaimedYearsType" minOccurs="0"/>
+			<xs:element name="Ncd_GrantedProtectedInd" type="yesNoValType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="coverType">
+		<xs:sequence>
+			<xs:element name="Cover_Code" type="coverCodeType"/>
+			<xs:element name="Cover_PermittedDrivers" type="driversAllowedType"/>
+			<xs:element name="Cover_VolXsAllowed" type="volxsAmountType"/>
+			<xs:element name="Cover_Period" type="coverPeriodType"/>
+			<xs:element name="Cover_TotalTempMtas" type="integerValType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="policyType">
+		<xs:sequence>
+			<xs:element name="Policy_QuoteAuthorisationRef" type="stringValType"/>
+			<xs:element name="PolicyCommunicationData" type="policyCommunicationType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="policyCommunicationType">
+		<xs:sequence>
+			<xs:element name="PolicyCommunicationData_SubjectCode" type="stringValType" minOccurs="0"/>
+			<xs:element name="PolicyCommunicationData_FunctionCode" type="stringValType" minOccurs="0"/>
+			<xs:element name="PolicyCommunicationData_ReferenceCodelist" type="stringValType" minOccurs="0"/>
+			<xs:element name="PolicyCommunicationData_ReferenceCodelistValue" type="stringValType" minOccurs="0"/>
+			<xs:element name="PolicyCommunicationData_TextVariable1" type="stringValType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="insurerRatingFactorType">
+		<xs:sequence>
+			<xs:element name="InsurerRatingFactor_Code" type="insurerRatingFactorCodeType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="coverCodeType">
+		<xs:attribute name="Val" type="coverCodeTypeList" use="required"/>
+	</xs:complexType>	
+	
+	<xs:complexType name="driversAllowedType">
+		<xs:attribute name="Val" type="driversAllowedTypeList" use="required"/>
+	</xs:complexType>	
+	
+	<xs:complexType name="volxsAmountType">
+		<xs:attribute name="Val" type="volxsAmountFormatType" use="required"/>
+	</xs:complexType>	
+	
+	<xs:complexType name="coverPeriodType">
+		<xs:attribute name="Val" type="coverPeriodTypeList" use="required"/>
+	</xs:complexType>
+		
+
+	
+	<xs:complexType name="insurerRatingFactorCodeType">
+		<xs:attribute name="Val" type="xs:string" use="required"/>
+	</xs:complexType>		
+	
+	
+	<xs:complexType name="usesAbiCodeType">
+		<xs:attribute name="Val" type="usesAbiCodeTypeList" use="required" />
+	</xs:complexType>
+	
+	<xs:complexType name="vehiclePostcodeType">
+		<xs:attribute name="Val" type="postcodeFormatType" use="required" />
+	</xs:complexType>
+
+		
+	<xs:complexType name="ncdClaimedYearsType">
+		<xs:attribute name="Val" type="ncdClaimedYearsFormatType" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="ncdClaimedDiscountType">
+		<xs:attribute name="Val" type="ncdClaimedDiscountTypeList" use="required"/>
+	</xs:complexType>		
+
+	<xs:complexType name="ncdEntitlementReasonType">
+		<xs:attribute name="Val" type="ncdEntitlementReasonTypeList" use="required"/>
+	</xs:complexType>			
+	
+	<xs:complexType name="miscellaneousType">
+		<xs:sequence>
+			<xs:element name="Miscellaneous_NoDeclines" type="integerValType" minOccurs="0"/>
+			<xs:element name="Miscellaneous_NoRefers" type="integerValType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+
+	
+	<xs:complexType name="premiumExclIptType">
+		<xs:attribute name="Val" type="premiumFormatType" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="premiumInclIptType">
+		<xs:attribute name="Val" type="premiumFormatType" use="required"/>
+	</xs:complexType>		
+	
+	<xs:complexType name="iptPctType">
+		<xs:attribute name="Val" type="iptFormatType" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="compulsoryXsType">
+		<xs:attribute name="Val" type="premiumFormatType" use="required"/>
+	</xs:complexType>						
+				
+	<xs:complexType name="declineResultType">
+		<xs:sequence>
+			<xs:element name="DeclineResult_Text" type="declineResultTextType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="declineResultTextType">
+		<xs:attribute name="Val" type="freeFormat60Type" use="required"/>
+	</xs:complexType>	
+	
+	<xs:complexType name="notesType">
+		<xs:sequence>
+			<xs:element name="Notes_Reference" type="notesReferenceType"/>
+			<xs:element name="Notes_Description" type="notesDescriptionType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="notesReferenceType">
+		<xs:attribute name="Val" type="notesReferenceFormatType" use="required"/>
+	</xs:complexType>		
+	
+	<xs:complexType name="notesDescriptionType">
+		<xs:attribute name="Val" type="freeFormat70Type" use="required"/>
+	</xs:complexType>		
+	
+	<xs:complexType name="communicationDataType">
+		<xs:sequence>
+			<xs:element name="CommunicationData_Code" type="stringValType" minOccurs="0"/>
+			<xs:element name="CommunicationData_Description" type="stringValType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>	
+
+	<xs:complexType name="endorsementResultType">
+		<xs:sequence>
+			<xs:element name="EndorsementResult_AlphaCode" type="endorsementResultCodeType" minOccurs="0"/>
+			<xs:element name="EndorsementResult_Code" type="endorsementResultCodeType" minOccurs="0"/>
+			<xs:element name="EndorsementResult_Title" type="endorsementResultTitleType"/>
+			<xs:element name="EndorsementResult_DriverPrn" type="endorsementResultDriverPrnType"/>
+			<xs:element name="EndorsementResult_Value" type="endorsementResultValueType"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="endorsementResultCodeType">
+		<xs:attribute name="Val" type="endorsementResultCodeFormatType" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="endorsementResultTitleType">
+		<xs:attribute name="Val" type="freeFormat70Type" use="required"/>
+	</xs:complexType>	
+	
+	<xs:complexType name="endorsementResultDriverPrnType">
+		<xs:attribute name="Val" type="driverPrnFormatType" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="endorsementResultValueType">
+		<xs:attribute name="Val" type="endorsementResultValueFormatType" use="required"/>
+	</xs:complexType>			
+	
+	<xs:complexType name="quoteBreakdownResultType">
+		<xs:sequence>
+			<xs:element name="QuoteBreakdownResult_Code" type="doubleValType"/>
+			<xs:element name="QuoteBreakdownResult_Amount" type="doubleValType"/>
+			<xs:element name="QuoteBreakdownResult_Description" type="stringValType"/>
+			<xs:element name="QuoteBreakdownResult_RunningTotal" type="doubleValType"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="excessBreakdownResultType">
+		<xs:sequence>
+			<xs:element name="ExcessBreakdownResult_Code" type="doubleValType" minOccurs="0"/>
+			<xs:element name="ExcessBreakdownResult_SectionCode" type="stringValType"/>
+			<xs:element name="ExcessBreakdownResult_Amount" type="excessBreakdownResultAmountType"/>
+			<xs:element name="ExcessBreakdownResult_Description" type="excessBreakdownResultDescriptionType"/>
+			<xs:element name="ExcessBreakdownResult_Reason" type="stringValType"/>
+			<xs:element name="ExcessBreakdownResult_DriverPrn" type="excessBreakdownResultDriverPrnType"/>						
+		</xs:sequence>
+	</xs:complexType>		
+
+	<xs:complexType name="excessBreakdownResultAmountType">
+		<xs:attribute name="Val" type="excessBreakdownResultAmountFormatType" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="excessBreakdownResultDescriptionType">
+		<xs:attribute name="Val" type="freeFormat70Type" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="excessBreakdownResultDriverPrnType">
+		<xs:attribute name="Val" type="driverPrnFormatType" use="required"/>
+	</xs:complexType>	
+			
+	
+	<xs:element name="PolMessage" type="polMessageType"/>
+
+</xs:schema>

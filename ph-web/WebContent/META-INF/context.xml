@@ -1,0 +1,15 @@
+<Context docBase="ph" path="/ph" reloadable="true">
+    <Environment name="PH_DIR" value="/tmp/apps/ph" type="java.lang.String"/>
+    
+    <!-- 
+		cachingAllowed: If the value of this flag is true, the cache for static resources will be used. 
+						If not specified, the default value of the flag is true.
+		cacheMaxSize:	Maximum size of the static resource cache in kilobytes. 
+						If not specified, the default value is 10240 (10 megabytes).
+ 	-->
+    <Resources
+    	cachingAllowed="true"
+    	cacheMaxSize="100000"
+	/>
+
+</Context>

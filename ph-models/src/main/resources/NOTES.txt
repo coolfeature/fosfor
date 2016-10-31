@@ -1,0 +1,8 @@
+
+CDL folder contains CDL IHP request and response type definitions.
+
+RADAR folder contains type definitions that are generated from the data 
+contained in the XLS folder. This data is agreed with the Relianz team.
+
+PH folder contains type definitions that import CDL and RADAR types and 
+ultimately define the PH API (rest) and WS (soap) types.  

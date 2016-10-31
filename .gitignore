@@ -1,0 +1,19 @@
+.project
+.classpath
+.settings
+.metadata
+target
+# ignore xjc generated classes  
+/ph-models/src/main/java/generated/*
+/ph-models/src/main/java/uk/co/surething/ph/models/ph/*
+/ph-models/src/main/java/uk/co/surething/ph/models/cdl/*
+/ph-models/src/main/java/uk/co/surething/ph/models/radar/*
+/ph-web/src/main/resources/performance_testing/tsung/results/*
+**/target
+**/.classpath
+**/.settings
+**/.project
+**/.metadata
+**/WebContent/WEB-INF/lib/*
+**/WebContent/WEB-INF/static/lib/*
+**/WebContent/static/lib/*

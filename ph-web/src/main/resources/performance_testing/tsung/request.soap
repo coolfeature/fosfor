@@ -1,0 +1,16 @@
+<x:Envelope xmlns:x="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ph="http://www.surething.co.uk/schemas/ph" xmlns:req1="http://www.cdl.co.uk/schemas/ihp/request">
+    <x:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsse:UsernameToken>
+                <wsse:Username>test</wsse:Username>
+                <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">test</wsse:Password>
+            </wsse:UsernameToken>
+        </wsse:Security>
+    </x:Header>
+    <x:Body>
+        <ph:getRateRequest>
+            <ph:PolMessage></ph:PolMessage>
+        </ph:getRateRequest>
+    </x:Body>
+</x:Envelope>
+

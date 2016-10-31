@@ -1,0 +1,33 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ 	elementFormDefault="qualified"
+	xmlns:cdlin="http://www.cdl.co.uk/schemas/ihp/request"
+	xmlns:cdlout="http://www.cdl.co.uk/schemas/ihp/response"
+	xmlns:radar="http://www.surething.co.uk/schemas/ph/radar"
+	xmlns:ph="http://www.surething.co.uk/schemas/ph"
+	targetNamespace="http://www.surething.co.uk/schemas/ph">
+
+	<!-- imports -->
+	<xs:import namespace="http://www.cdl.co.uk/schemas/ihp/request" schemaLocation="../cdl/requestMotor.xsd" />
+	<xs:import namespace="http://www.cdl.co.uk/schemas/ihp/response" schemaLocation="../cdl/responseMotor.xsd" />
+	<!-- 
+	<xs:import namespace="http://www.surething.co.uk/schemas/ph/radar" schemaLocation="../radar/radar_v1.xsd" />
+	 -->
+	
+
+    <xs:element name="getRateRequest">
+    	<xs:complexType>
+            <xs:sequence>
+                <xs:element name="PolMessage" type="cdlin:polMessageType"  minOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+	<xs:element name="getRateResponse">
+		<xs:complexType>
+	       	<xs:sequence>
+	            <xs:element name="message" type="xs:string"/>
+	        </xs:sequence>
+	    </xs:complexType>
+	</xs:element>
+	    
+</xs:schema>

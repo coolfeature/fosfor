@@ -1,0 +1,6 @@
+
+# Tweak Tomcat Thread pool size if needed 
+http://tomcat.apache.org/tomcat-8.0-doc/config/http.html
+
+# http://stackoverflow.com/questions/14876447/what-could-cause-global-tomcat-jvm-slowdown
+-XX:ReservedCodeCacheSize=256m
